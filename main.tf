@@ -22,6 +22,12 @@ resource "azurerm_resource_group" "demo1rg" {
   location = "West Europe"
 }
 
+resource "azurerm_network_security_group" "vnet1-sub-nsg" {
+  name                = "vnet1-sub-nsg"
+  location            = azurerm_resource_group.demorg.location
+  resource_group_name = azurerm_resource_group.demorg.name
+}
+
 resource "azurerm_virtual_network" "vnet1" {
   name                = "vnet1"
   resource_group_name = azurerm_resource_group.demorg.name
@@ -36,7 +42,7 @@ resource "azurerm_virtual_network" "vnet1" {
   subnet {
     name           = "sub2"
     address_prefix = "10.0.2.0/24"
-    security_group = azurerm_network_security_group.demorg.id
+    security_group = azurerm_network_security_group.vnet1-sub-nsg.id
   }
 
   tags = {
