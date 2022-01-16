@@ -21,3 +21,10 @@ resource "azurerm_resource_group" "demo1rg" {
   name     = "demo1rg"
   location = "West Europe"
 }
+
+resource "azurerm_virtual_network" "vnet1" {
+  name                = "vnet1"
+  resource_group_name = azurerm_resource_group.demorg.name
+  location            = azurerm_resource_group.demorg.location
+  address_space       = ["10.0.0.0/16"]
+}
