@@ -36,7 +36,7 @@ resource "azurerm_virtual_network" "vnet1" {
   subnet {
     name           = "sub2"
     address_prefix = "10.0.2.0/24"
-    #security_group = azurerm_network_security_group.vnet1.id
+    security_group = azurerm_network_security_group.demorg.id
   }
 
   tags = {
