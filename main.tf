@@ -42,4 +42,3 @@ resource "azurerm_virtual_network" "vnet1" {
   tags = {
     environment = "Production"
   }
-}
