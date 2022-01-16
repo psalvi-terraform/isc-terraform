@@ -16,3 +16,8 @@ resource "azurerm_resource_group" "demorg" {
   name     = "demorg"
   location = "West Europe"
 }
+# Create a resource group
+resource "azurerm_resource_group" "demo1rg" {
+  name     = "demo1rg"
+  location = "West Europe"
+}
