@@ -51,7 +51,7 @@ resource "azurerm_virtual_network" "vnet1" {
 }
 ### new RG using variables 
 
-resource "azurerm_resource_group" "test rg5" {
+resource "azurerm_resource_group" "testrg5" {
   name     = Var.azurerm_resource_group
   location = "West Europe"
 }
