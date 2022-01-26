@@ -1,1 +1,1 @@
-azurerm_resource_group="mytestrg"
+azurerm_resource_group = "mytestrg"
